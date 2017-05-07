@@ -10,6 +10,7 @@ import * as firebase from 'firebase/app';
 export class AF {
   public messages: FirebaseListObservable<any>;
   public announcements: FirebaseListObservable<any>;
+  public testimonials: FirebaseListObservable<any>;
   public users: FirebaseListObservable<any>;
   public user: Observable<firebase.User>;
   public displayName: string;
@@ -20,6 +21,7 @@ export class AF {
   constructor(public db: AngularFireDatabase, public afAuth: AngularFireAuth) {
       this.messages = this.db.list('messages');
       this.announcements = this.db.list('announcements');
+      this.testimonials = this.db.list('testimonials');
   }
 
   getCurrentDate() {
@@ -66,6 +68,18 @@ export class AF {
       timestamp: this.getCurrentDate()
     };
     this.announcements.push(announcement);
+  }
+
+   /**
+   * Saves a testimonial to the Firebase Realtime Database
+   * @param text
+   */
+  saveTestimonial(text) {
+    const testimonial = {
+      testimonial: text,
+      timestamp: this.getCurrentDate()
+    };
+    this.testimonials.push(testimonial);
   }
 
 }

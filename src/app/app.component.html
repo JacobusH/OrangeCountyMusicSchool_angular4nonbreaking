@@ -27,7 +27,8 @@
                 <li><a *ngIf="isLoggedIn" (click)="logout()">Logout</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li *ngIf="isLoggedIn"><a href='/'>{{ displayName }}</a></li>
+                <li *ngIf="isLoggedIn && isAdmin"><a routerLink="/administration" [routerLinkActive]="['active']">Administration</a></li>
+                <li *ngIf="isLoggedIn">{{ displayName }}</li>
                 <li><a *ngIf="!isLoggedIn" (click)="login()">Login</a></li>
             </ul>
         </div>

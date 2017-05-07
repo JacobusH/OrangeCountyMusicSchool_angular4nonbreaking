@@ -29,6 +29,8 @@ import { HomeVideoComponent } from './home-video/home-video.component';
 import { HomeInstrumentListComponent } from './home-instrument-list/home-instrument-list.component';
 import { TestimonialsCreateComponent } from './testimonials-create/testimonials-create.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { AdministrationComponent } from './administration/administration.component';
+import { AnnouncementAdminComponent } from './announcement-admin/announcement-admin.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyCFToauOWTjn55Oc2e6L1YkCt5ZGzbMXV8',
@@ -49,7 +51,8 @@ const routes: Routes = [
   { path: 'faq', component: FAQComponent },
   { path: 'testimonials', component: TestimonialsComponent },
   { path: 'resources', component: ResourcesComponent },
-  { path: 'contact', component: ContactComponent }
+  { path: 'contact', component: ContactComponent },
+  { path: 'admin', component: AdministrationComponent }  
 ];
 
 
@@ -70,7 +73,9 @@ const routes: Routes = [
     HomeVideoComponent,
     HomeInstrumentListComponent,
     TestimonialsCreateComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    AdministrationComponent,
+    AnnouncementAdminComponent
   ],
   imports: [
     AlertModule.forRoot(),

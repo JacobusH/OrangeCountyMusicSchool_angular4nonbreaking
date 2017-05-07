@@ -15,31 +15,34 @@ import { Router } from '@angular/router';
 
 export class AppComponent {
   public isLoggedIn: boolean;
+  public isAdmin: boolean;
   public displayName: string;
 
   title = 'app works!';
 
-  constructor(public afService: AF, private router: Router) {
-  //  this.afService.afAuth.auth.subscribe(
-  //    (auth) => {
-  //      if (auth == null) {
-  //        console.log('not logged in');
+  constructor(public afService: AF, public authService: AngularFireAuth, private router: Router) {
+   this.afService.afAuth.authState.subscribe(
+     (auth) => {
+       if (auth == null) {
+         console.log('not logged in');
 
-  //        this.isLoggedIn = false;
-  //       //  this.router.navigate(['login']); // if we want to navigate to login page
-  //      } else {
-  //        console.log('Successfully logged in');
+         this.isLoggedIn = false;
+        //  this.router.navigate(['login']); // if we want to navigate to login page
+       } else {
+         console.log('Successfully logged in: ' + auth.displayName + " ... ");
+         console.log("email: " + auth.email );
+         console.log("authjson: " + auth.toJSON().toString() );
 
-  //        // set display name and email
-  //        this.afService.displayName = auth.google.displayName;
-  //        this.afService.email = auth.google.email;
+         // set display name and email
+         this.afService.displayName = auth.displayName;
+         this.afService.email = auth.email;
 
-  //        this.displayName = auth.google.displayName;
+         this.displayName = auth.displayName;
 
-  //        this.isLoggedIn = true;
-  //      }
-  //    }
-  //  );
+         this.isLoggedIn = true;
+       }
+     }
+   );
   }
 
   logout() {
