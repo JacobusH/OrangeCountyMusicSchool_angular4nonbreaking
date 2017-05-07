@@ -1,0 +1,15 @@
+.announcement
+{
+    margin-bottom:10px;
+}
+
+.message
+{
+    font-size: 18px;
+}
+
+.timestamp
+{
+    font-weight: bold;
+    font-size: 20px;
+}

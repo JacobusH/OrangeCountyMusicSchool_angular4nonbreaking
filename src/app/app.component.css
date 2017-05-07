@@ -1,0 +1,32 @@
+a {
+    cursor:pointer;
+}
+
+.app-content
+{
+    margin-bottom:15px;
+}
+
+@media screen and (max-width: 1300px)
+{
+    :host >>> .med-hide
+    {
+        display:none !important;
+    }
+    :host >>> .med-show
+    {
+        display:block !important;
+    }
+}
+
+@media screen and (min-width: 1300px)
+{
+    :host >>> .med-hide
+    {
+        display:block !important;
+    }
+    :host >>> .med-show
+    {
+        display:none !important;
+    }
+}

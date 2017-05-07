@@ -1,0 +1,40 @@
+.container
+{
+    text-align: center;
+}
+
+#home-video
+{
+    height:322px;
+}
+
+.testimonial-text
+{
+    font-family: "arno-pro-display", serif;
+    font-style: normal;
+    font-weight: 400;
+    margin:0px 35px 0px 35px;
+    padding-top:15px;
+    font-size:22px;
+}
+
+.testimonial-author
+{
+    margin-left:55px;
+}
+
+.quote
+{
+    width:30px;
+}
+
+.quote-left
+{
+    float:left;
+}
+
+.quote-right
+{
+    float:right;
+}
+
