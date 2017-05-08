@@ -5,6 +5,8 @@ a {
 .app-content
 {
     margin-bottom:15px;
+    margin-top:66px;
+    margin:66px 15px 59px 15px;
 }
 
 @media screen and (max-width: 1300px)

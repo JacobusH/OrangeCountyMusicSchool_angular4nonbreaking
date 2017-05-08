@@ -17,13 +17,11 @@ export class AppComponent {
   public isLoggedIn: boolean;
   public isAdmin: boolean;
   public displayName: string;
-  public roles: FirebaseListObservable<any>;
 
 
   title = 'app works!';
 
   constructor(public afService: AF, public authService: AngularFireAuth, private router: Router) {
-   this.roles = this.afService.roles;
    
    this.afService.afAuth.authState.subscribe(
      (auth) => {
@@ -57,19 +55,13 @@ export class AppComponent {
     this.afService.loginWithGoogle().then((date) => {
       this.isLoggedIn = true;
     });
+
   }
 
   checkUserRole(userId)
   {
-    console.log("hello: " + userId);
 
-    this.roles.subscribe(roles => {
-    roles.forEach(role => {
-        console.log('Role:', role);
-    });
-
-
-});
+    
 
   }
 

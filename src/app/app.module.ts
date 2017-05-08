@@ -1,7 +1,7 @@
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -31,6 +31,7 @@ import { TestimonialsCreateComponent } from './testimonials-create/testimonials-
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { AnnouncementAdminComponent } from './announcement-admin/announcement-admin.component';
+import { GalleryCarouselComponent } from './gallery-carousel/gallery-carousel.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyCFToauOWTjn55Oc2e6L1YkCt5ZGzbMXV8',
@@ -75,14 +76,15 @@ const routes: Routes = [
     TestimonialsCreateComponent,
     LoginPageComponent,
     AdministrationComponent,
-    AnnouncementAdminComponent
+    AnnouncementAdminComponent,
+    GalleryCarouselComponent
   ],
   imports: [
     AlertModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     HttpModule,

@@ -15,7 +15,6 @@ export class AF {
   public user: Observable<firebase.User>;
   public displayName: string;
   public email: string;
-  public roles: FirebaseListObservable<any>;
 
   private currentDate: string;
 
@@ -23,7 +22,8 @@ export class AF {
       this.messages = this.db.list('messages');
       this.announcements = this.db.list('announcements');
       this.testimonials = this.db.list('testimonials');
-      this.roles = this.db.list('roles');
+
+      this.user = this.afAuth.authState;
   }
 
   getCurrentDate() {
@@ -38,6 +38,7 @@ export class AF {
   loginWithGoogle() {
     return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
+
 
   /**
    * Logs out the current user
