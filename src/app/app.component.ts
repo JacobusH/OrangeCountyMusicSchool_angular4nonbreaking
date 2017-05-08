@@ -17,10 +17,14 @@ export class AppComponent {
   public isLoggedIn: boolean;
   public isAdmin: boolean;
   public displayName: string;
+  public roles: FirebaseListObservable<any>;
+
 
   title = 'app works!';
 
   constructor(public afService: AF, public authService: AngularFireAuth, private router: Router) {
+   this.roles = this.afService.roles;
+   
    this.afService.afAuth.authState.subscribe(
      (auth) => {
        if (auth == null) {
@@ -29,15 +33,14 @@ export class AppComponent {
          this.isLoggedIn = false;
         //  this.router.navigate(['login']); // if we want to navigate to login page
        } else {
-         console.log('Successfully logged in: ' + auth.displayName + " ... ");
-         console.log("email: " + auth.email );
-         console.log("authjson: " + auth.toJSON().toString() );
+         console.log('Successfully logged in: ' + auth.uid);
 
          // set display name and email
          this.afService.displayName = auth.displayName;
          this.afService.email = auth.email;
-
          this.displayName = auth.displayName;
+
+         this.checkUserRole(auth.uid);
 
          this.isLoggedIn = true;
        }
@@ -54,6 +57,20 @@ export class AppComponent {
     this.afService.loginWithGoogle().then((date) => {
       this.isLoggedIn = true;
     });
+  }
+
+  checkUserRole(userId)
+  {
+    console.log("hello: " + userId);
+
+    this.roles.subscribe(roles => {
+    roles.forEach(role => {
+        console.log('Role:', role);
+    });
+
+
+});
+
   }
 
 

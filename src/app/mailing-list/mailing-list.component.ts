@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy , Input, Output, EventEmitter } from '@angular/core';
-import {MailingList} from './mailing-list';
+import {MailingList} from '../models/mailing-list';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
