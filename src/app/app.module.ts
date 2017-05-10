@@ -32,6 +32,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { AnnouncementAdminComponent } from './announcement-admin/announcement-admin.component';
 import { GalleryCarouselComponent } from './gallery-carousel/gallery-carousel.component';
+import { TeacherCarouselComponent } from './teacher-carousel/teacher-carousel.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyCFToauOWTjn55Oc2e6L1YkCt5ZGzbMXV8',
@@ -77,7 +78,8 @@ const routes: Routes = [
     LoginPageComponent,
     AdministrationComponent,
     AnnouncementAdminComponent,
-    GalleryCarouselComponent
+    GalleryCarouselComponent,
+    TeacherCarouselComponent
   ],
   imports: [
     AlertModule.forRoot(),

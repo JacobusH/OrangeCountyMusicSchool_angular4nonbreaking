@@ -1,3 +1,18 @@
-<p>
-  teachers works!
-</p>
+<app-teacher-carousel
+  [datasource]=teachers
+>
+</app-teacher-carousel>
+<!--
+<div *ngFor="let announcement of announcements | async">
+  <div class="announcement">
+      <span class="timestamp">{{ announcement.timestamp }} - </span>
+      <span class="message">{{ announcement.announcement }}</span>
+  </div>
+</div>
+
+<div *ngFor="let teacher of teachers | async">
+  <div class="teacher">
+      <span class="timestamp">{{ teacher.name }} - </span>
+      <span class="message">{{ teacher.summary }}</span>
+  </div>
+</div>-->

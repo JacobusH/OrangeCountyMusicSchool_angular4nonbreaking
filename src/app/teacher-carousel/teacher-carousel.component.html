@@ -1,0 +1,16 @@
+<div class="teacher" *ngFor="let teacher of datasource | async">
+  <div (click)=setSelectedTeacher(teacher)>
+    <img src="../../assets/teachers/{{teacher.imgName}}.jpg" />
+  </div>
+</div>
+
+<div id="selectedTeacher" *ngIf="selectedTeacher">
+  <div id="instrument">
+    <img src="#" />
+  </div>
+  <div id="info">
+    <p>
+      {{selectedTeacher.summary}}
+    </p>
+  </div>
+</div>

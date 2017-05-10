@@ -11,6 +11,7 @@ export class AF {
   public messages: FirebaseListObservable<any>;
   public announcements: FirebaseListObservable<any>;
   public testimonials: FirebaseListObservable<any>;
+  public teachers: FirebaseListObservable<any>;
   public users: FirebaseListObservable<any>;
   public user: Observable<firebase.User>;
   public displayName: string;
@@ -22,6 +23,7 @@ export class AF {
       this.messages = this.db.list('messages');
       this.announcements = this.db.list('announcements');
       this.testimonials = this.db.list('testimonials');
+      this.teachers = this.db.list('teachers');
 
       this.user = this.afAuth.authState;
   }
@@ -31,26 +33,14 @@ export class AF {
     return dt.getFullYear() + '/' + (dt.getMonth() + 1) + '/' + dt.getDate();
   }
 
-  /**
-   * Logs in the user
-   * @returns {firebase.Promise<FirebaseAuthState>}
-   */
   loginWithGoogle() {
     return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
 
-
-  /**
-   * Logs out the current user
-   */
   logout() {
     return this.afAuth.auth.signOut();
   }
 
-   /**
-   * Saves a message to the Firebase Realtime Database
-   * @param text
-   */
   sendMessage(text) {
     const message = {
       message: text,
@@ -61,10 +51,6 @@ export class AF {
     this.messages.push(message);
   }
 
-  /**
-   * Saves an announcment to the Firebase Realtime Database
-   * @param text
-   */
   saveAnnouncement(text) {
     const announcement = {
       announcement: text,
@@ -73,10 +59,6 @@ export class AF {
     this.announcements.push(announcement);
   }
 
-   /**
-   * Saves a testimonial to the Firebase Realtime Database
-   * @param text
-   */
   saveTestimonial(text) {
     const testimonial = {
       testimonial: text,
@@ -84,5 +66,13 @@ export class AF {
     };
     this.testimonials.push(testimonial);
   }
+
+  // saveTeacher(text) {
+  //   const teacher = {
+  //     teacher: text,
+  //     timestamp: this.getCurrentDate()
+  //   };
+  //   this.teachers.push(teacher);
+  // }
 
 }
