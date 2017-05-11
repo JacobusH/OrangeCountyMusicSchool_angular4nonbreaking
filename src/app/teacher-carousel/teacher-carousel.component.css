@@ -1,4 +1,30 @@
-.teacher
+h2
 {
-    display:inline;
+    text-align: center;
+}
+
+.teachers
+{
+    text-align:center;
+}
+
+.teacher img
+{
+    height:200px;
+    width:250px;
+    border:1px solid black;
+    border-radius:5px;
+    margin:10px 10px;    
+}
+
+.info
+{
+    border-right:1px solid grey;
+    padding-right:25px;
+}
+
+.first-time
+{
+    text-align: center;
+    margin-top:60px;
 }

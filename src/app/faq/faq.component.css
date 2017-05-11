@@ -1,0 +1,29 @@
+.faq-container
+{
+    text-align: center;
+}
+
+.row
+{
+    /*padding-bottom:15px;*/
+}
+
+.row > div
+{
+    min-height:180px;
+}
+
+.row-white > div:nth-child(odd)
+{
+    background-color:#f5f5f5;
+}
+
+.row-beige
+{
+    background-color:#f5f5f5;
+}
+
+h4
+{
+    font-weight: bold;
+}

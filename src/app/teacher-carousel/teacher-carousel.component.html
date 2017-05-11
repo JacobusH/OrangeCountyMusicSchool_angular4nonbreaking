@@ -1,16 +1,28 @@
-<div class="teacher" *ngFor="let teacher of datasource | async">
-  <div (click)=setSelectedTeacher(teacher)>
-    <img src="../../assets/teachers/{{teacher.imgName}}.jpg" />
+<h2>Check Out Our Teachers!</h2>
+<div class="teachers">
+  <div class="IL teacher" *ngFor="let teacher of datasource | async">
+    <div (click)=setSelectedTeacher(teacher)>
+      <img src="../../assets/teachers/{{teacher.imgName}}.jpg" />
+    </div>
   </div>
 </div>
 
 <div id="selectedTeacher" *ngIf="selectedTeacher">
-  <div id="instrument">
-    <img src="#" />
+  <div class="row">
+    <div class="col-lg-8 col-xs-12">
+      <div class="info" [innerHtml]="selectedTeacher.summary">
+      </div>
+    </div>
+     <div class="col-lg-4 col-xs-12">
+      <div id="instrument">
+        <img src="#" />
+      </div>
+    </div>
   </div>
-  <div id="info">
-    <p>
-      {{selectedTeacher.summary}}
-    </p>
-  </div>
+</div>
+
+<div class="first-time" *ngIf="!selectedTeacher">
+  <h4>
+    Click on a teacher above to learn more!
+  </h4>
 </div>
