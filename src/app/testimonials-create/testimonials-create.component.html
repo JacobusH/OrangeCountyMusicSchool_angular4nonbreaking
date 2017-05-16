@@ -1,13 +1,52 @@
-<p>
-  testimonials-create works!
-</p>
-
-
-<div class="row columns">
-  <button (click)="login()" *ngIf="!name">Anonymous Login</button>
-
-  <input type="text" id="message" *ngIf="name" placeholder="What is it that you do?" (keyup.enter)="Send($event.target.value)" [(ngModel)]="msgVal" />
-  <div id="details-container">
-      <p *ngFor="let item of items | async"><img src="../assets/images/pin.svg">{{item.message}}</p>
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="testimonials-container">
+      <h3>Testimonials (most recent 3)</h3>
+      <div id="testimonials" *ngFor="let testimonial of testimonials | async">
+        <div class="testimonial">
+            <span class="message">Testimonial: {{ testimonial.text }}</span><br/>
+            <span class="timestamp">Date: {{ testimonial.date }}</span><br/>
+            <span class="author">Author: {{ testimonial.author }}</span>
+        </div>
+        <br/>
+      </div>
+    </div>
   </div>
-</div>
+</div>  
+
+ <form (ngSubmit)="saveTestimonial()" #testimonialForm="ngForm">
+     <div class="form-group">
+        <label for="text">Testimonial</label>
+        <input type="text" class="form-control" id="text" required
+         [(ngModel)]="model.text" name="text"
+         #text="ngModel">
+        <div [hidden]="text.valid || text.pristine"
+             class="alert alert-danger">
+          Testimonial is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="author">Author</label>
+        <input type="text" class="form-control" id="author"
+         [(ngModel)]="model.author" name="author"
+         #author="ngModel">
+         <!--<div [hidden]="author.valid || author.pristine"
+             class="alert alert-danger">
+          Author Name is required
+        </div>-->
+      </div>
+
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" class="form-control" id="date"
+         [(ngModel)]="model.date" name="date"
+         #date="ngModel">
+         <!--<div [hidden]="date.valid || date.pristine"
+             class="alert alert-danger">
+          Date is required
+        </div>-->
+      </div>
+      
+      <button type="submit" class="btn btn-success" [disabled]="!testimonialForm.form.valid">Save</button>
+    </form>

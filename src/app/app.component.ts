@@ -15,14 +15,14 @@ import { Router } from '@angular/router';
 
 export class AppComponent {
   public isLoggedIn: boolean;
-  public isAdmin: boolean;
+  public isAdmin: boolean = true;
   public displayName: string;
 
 
   title = 'app works!';
 
   constructor(public afService: AF, public authService: AngularFireAuth, private router: Router) {
-   
+
    this.afService.afAuth.authState.subscribe(
      (auth) => {
        if (auth == null) {

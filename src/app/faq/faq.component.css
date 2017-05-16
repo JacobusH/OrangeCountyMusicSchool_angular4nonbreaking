@@ -10,7 +10,7 @@
 
 .row > div
 {
-    min-height:180px;
+    min-height:200px;
 }
 
 .row-white > div:nth-child(odd)

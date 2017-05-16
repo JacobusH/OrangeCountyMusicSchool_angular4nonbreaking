@@ -2,3 +2,5 @@
 [0508/131134:ERROR:node_debugger.cc(86)] Cannot start debugger server
 [0510/085101:ERROR:tcp_listen_socket.cc(76)] Could not bind socket to 127.0.0.1:6004
 [0510/085101:ERROR:node_debugger.cc(86)] Cannot start debugger server
+[0512/131902:ERROR:tcp_listen_socket.cc(76)] Could not bind socket to 127.0.0.1:6004
+[0512/131902:ERROR:node_debugger.cc(86)] Cannot start debugger server

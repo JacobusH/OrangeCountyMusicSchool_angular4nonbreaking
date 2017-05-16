@@ -5,12 +5,14 @@ import {AngularFireModule} from 'angularfire2';
 import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import * as firebase from 'firebase/app';
+import { Testimonial } from '../models/testimonial';
 
 @Injectable()
 export class AF {
   public messages: FirebaseListObservable<any>;
   public announcements: FirebaseListObservable<any>;
   public testimonials: FirebaseListObservable<any>;
+  public testimonialsRecent: FirebaseListObservable<any>;
   public teachers: FirebaseListObservable<any>;
   public users: FirebaseListObservable<any>;
   public user: Observable<firebase.User>;
@@ -24,6 +26,10 @@ export class AF {
       this.announcements = this.db.list('announcements');
       this.testimonials = this.db.list('testimonials');
       this.teachers = this.db.list('teachers');
+      this.testimonialsRecent = this.db.list('testimonials', {
+        query: {
+        limitToLast: 3
+      }});
 
       this.user = this.afAuth.authState;
   }
@@ -59,11 +65,7 @@ export class AF {
     this.announcements.push(announcement);
   }
 
-  saveTestimonial(text) {
-    const testimonial = {
-      testimonial: text,
-      timestamp: this.getCurrentDate()
-    };
+  saveTestimonial(testimonial: Testimonial) {
     this.testimonials.push(testimonial);
   }
 

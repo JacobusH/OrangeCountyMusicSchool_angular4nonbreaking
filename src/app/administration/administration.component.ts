@@ -4,6 +4,7 @@ import {AngularFireModule} from 'angularfire2';
 import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import {AF} from '../providers/af';
+import { Testimonial } from '../models/testimonial';
 
 @Component({
   selector: 'app-administration',
@@ -13,7 +14,7 @@ import {AF} from '../providers/af';
 export class AdministrationComponent implements OnInit {
   public newAnnouncement: string;
   public announcements: FirebaseListObservable<any>;
-  public newTestimonial: string;
+  public newTestimonial: Testimonial;
   public testimonials: FirebaseListObservable<any>;
 
   constructor(public afService: AF) {
