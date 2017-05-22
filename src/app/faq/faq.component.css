@@ -3,6 +3,11 @@
     text-align: center;
 }
 
+.faq-container > div > div
+{
+    border: 1px dashed grey;
+}
+
 .row
 {
     /*padding-bottom:15px;*/
@@ -11,16 +16,6 @@
 .row > div
 {
     min-height:200px;
-}
-
-.row-white > div:nth-child(odd)
-{
-    background-color:#f5f5f5;
-}
-
-.row-beige
-{
-    background-color:#f5f5f5;
 }
 
 h4
