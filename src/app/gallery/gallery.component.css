@@ -1,0 +1,9 @@
+.carousel-inner, .item
+{
+    height:100%;
+}
+
+.carousel.slide
+{
+    height:400px;
+}

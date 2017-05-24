@@ -1,0 +1,8 @@
+.resource-section {
+    display: inline-block;
+}
+
+.resource-section .links > a {
+    clear: both;
+    displaY: block;
+}

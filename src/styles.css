@@ -7,7 +7,7 @@ html
 
 p
 {
-    font-size: 18px;
+    font-size: 20px;
     font-family: "Raleway, Helvetica Neue, Helvetica, Arial, sans-serif";
 }
 
@@ -23,4 +23,16 @@ footer
 .IL
 {
     display: inline-block;
+}
+
+.IL-image-left
+{
+    float:left;
+    margin-right:15px;
+}
+
+.IL-image-right
+{
+    float:right;
+    margin-left:15px;
 }
