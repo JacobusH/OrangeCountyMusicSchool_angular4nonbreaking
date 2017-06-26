@@ -1,15 +1,44 @@
-.announcement
-{
+.announcements-popout {
+    z-index: 5000;
+    width: 120px;
+    height: 400px;
+    position: absolute;
+    right: -540px;
+    top: 0;
+}
+
+.announcements-tab {
+    position: relative;
+    width: 60px;
+    height: 150px;
+    background: #f5f5f5;
+    border: 3px solid black;
+    z-index: 4999;
+    left: -477px;
+    top: 210px;
+    cursor: pointer;
+}
+
+.announcements-tab .vertical {
+    top: 121px;
+    position: relative;
+    font-size: 19px;
+    text-shadow: 1px 1px #000;
+}
+
+.announcement {
     margin-bottom:10px;
 }
 
-.message
-{
+.message {
     font-size: 18px;
 }
 
-.timestamp
-{
+.timestamp {
     font-weight: bold;
     font-size: 20px;
 }
+
+    
+
+    

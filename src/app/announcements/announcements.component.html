@@ -1,21 +1,29 @@
-<div class="row">
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <div class="announcements-container">
-      <h3>Announcements</h3>
-      <div id="announcements" *ngFor="let announcement of announcements | async">
-        <div class="announcement">
-            <span class="timestamp">{{ announcement.timestamp }} - </span>
-            <span class="message">{{ announcement.announcement }}</span>
+<div class="announcements-popout">
+  <div #annTab class="announcements-tab" (click)="onTabClick()">
+    <span class="vertical">Announcements</span>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="announcements-container">
+        <h3>Announcements</h3>
+        <div id="announcements" *ngFor="let announcement of announcements | async">
+          <div class="announcement">
+              <span class="timestamp">{{ announcement.timestamp }} - </span>
+              <span class="message">{{ announcement.announcement }}</span>
+          </div>
         </div>
-      </div>
-      <div id="announcementsEnterBox" class="EnterBox">
-        <input type="textarea" 
-          class="message-text" 
-          [(ngModel)]="newAnnouncement" 
-          (keyup.enter)="saveAnnouncement()"
-        >
-        <a class="send-message" (click)="saveAnnouncement()">Save</a>
+      
       </div>
     </div>
-  </div>
-</div>  
+  </div>  
+</div>
+
+<!-- PUt this in to save -->
+<!--<div id="announcementsEnterBox" class="EnterBox">
+  <input type="textarea" 
+    class="message-text" 
+    [(ngModel)]="newAnnouncement" 
+    (keyup.enter)="saveAnnouncement()"
+  >
+  <a class="send-message" (click)="saveAnnouncement()">Save</a>
+</div>-->

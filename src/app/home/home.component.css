@@ -13,6 +13,9 @@
   padding: 10px;
   height: 490px;
   background: whitesmoke;
+  overflow-y: scroll;
+  min-width:350%;
+  text-align:left;
 }
 
 :host >>> .announcements-lower .announcements-container
@@ -36,40 +39,18 @@
 
 .home-img-container
 {
-  position:relative;
-  display: table;
   background: url('../../assets/photos/fullpiano.jpg') no-repeat top center ;
-  width:100%;
-  opacity: .6;
-  height:500px;
-  max-height:500px;
   background-size: 100% auto;
-  color: #fff;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0 ,0.9), 0px 0px 10px rgba(0, 0, 0 ,0.9);
+  color: #000;
+  /*text-shadow: 0px 0px 5px rgba(0, 0, 0 ,0.9), 0px 0px 10px rgba(0, 0, 0 ,0.9);*/
   font-size: 26px;
+  text-align: center;
 }
 
 .overlay
 {
   display: table-cell;
   vertical-align: middle;
-}
-
-.overlay h1.home-img-title
-{
-  text-align: center;
-  font-size: 165%;
-  font-weight: lighter;
-  line-height: 2;
-  padding: 0 10%;
-}
-
-h5.home-img-text
-{
-  text-align: center;
-  font-weight: lighter;
-  line-height: 2;
-  padding: 0 10%;
 }
 
 #homeImg

@@ -1,18 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
-html
-{
+html {
     position: relative;
     min-height:100%;
 }
 
-p
-{
-    font-size: 18px;
+p {
+    font-size: 20px;
     font-family: "Raleway, Helvetica Neue, Helvetica, Arial, sans-serif";
 }
 
-footer
-{
+footer {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -20,7 +17,123 @@ footer
     background-color: #f5f5f5;
 }
 
-.IL
-{
+.row {
+    margin-top:15px;
+}
+
+.IL {
     display: inline-block;
+}
+
+.IL-image-left {
+    float:left;
+    margin-right:15px;
+}
+
+.IL-image-right {
+    float:right;
+    margin-left:15px;
+}
+
+.banner-img {
+  position:relative;
+  display: table;
+  /*background: url('../../assets/photos/fullpiano.jpg') no-repeat top center ;*/
+  width:100%;
+  opacity: .6;
+  height:500px;
+  max-height:500px;
+  background-size: 100% auto;
+  color: #000;
+  /*text-shadow: 0px 0px 5px rgba(0, 0, 0 ,0.9), 0px 0px 10px rgba(0, 0, 0 ,0.9);*/
+  font-size: 26px;
+    text-align: center;
+    margin:-15px -15px 0px 0px;
+}
+
+.banner-title {
+    background: black;
+    position: relative;
+    display: inline-block;
+    margin: 0px 0 0;
+    padding: 0 50px;
+    width: auto;
+    border: solid 1px white;
+    color: white;
+    font-size: 42px;
+    line-height: 60px;
+}
+
+.banner-title.other {
+    margin:180px 0 0;
+}
+
+
+.banner-title .under {
+    font-size: 32px;
+}
+
+.banner-col {
+    padding:0px;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.border-top {
+    border-top: 1px solid #d3d3d3;
+    margin-left:2px;
+    margin-right:2px;
+}
+
+.border-left {
+    border-left: 1px solid #d3d3d3;
+}
+
+.border-right {
+    border-right: 1px solid #d3d3d3;
+}
+
+.info-section .info-cell {
+    margin-top:50px;
+}
+
+.info-cell
+{
+    border: 1px solid rgba(0,0,0,0.1);
+    background-color: white;
+    padding: 30px 25px 30px 25px;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.025);
+}
+
+.info-cell .title {
+
+}
+
+.info-cell .text {
+
+}
+
+.info-cell .quote {
+    font-style: italic;
+}
+
+.info-cell .quote-author {
+    margin: 10px 0px 0px 5px;
+    font-style: oblique;
+}
+
+.vertical{
+    writing-mode:tb-rl;
+    -webkit-transform:rotate(180deg);
+    -moz-transform:rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform:rotate(180deg);
+    transform: rotate(180deg);
+    white-space:nowrap;
+    display:block;
+    bottom:0;
+    width:20px;
+    height:20px;
 }
