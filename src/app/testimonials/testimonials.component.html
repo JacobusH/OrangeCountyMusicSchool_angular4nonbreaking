@@ -1,27 +1,18 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="bs-example" id="messages">
-        
-        <!-- Point: 1 -->
-        <div *ngFor="let message of messages | async">
-          
-          <!-- Point: 2 -->
-          <div class="bubble">
-            <p>{{ message.message }}</p>
-            <div class="author">
-              {{ message.displayName }} | {{ message.timestamp | date:"MM/dd/yy hh:mm a" }}
-            </div>
-          </div>
-        </div>
+<div class="row">
+  <div class="test-sup-container" *ngFor="let test of testimonials | async">
+      <div class="testimonial-container">
+          <img class="quote-left quote" src="../../assets/photos/quotesleft.png" /> 
+          <p class="testimonial-text">
+            {{test.text}}
+          </p>
+          <img class="quote-right quote" src="../../assets/photos/quotesright.png" />
+          <span class="testimonial-author">
+            {{test.author}}
+          </span>
+          <span class="testimonal-job">
+            {{test.date}}
+          </span>
+          <span class="testimonial-date">January 2013</span>
       </div>
-      <figure class="highlight">
-        
-        <!-- Point: 3 -->
-        <input type="textarea" class="message-text" [(ngModel)]="newMessage" (keyup.enter)="sendMessage()">
-        <a class="send-message" (click)="sendMessage()">SEND</a>
-        
-      </figure>
     </div>
-  </div>
 </div>

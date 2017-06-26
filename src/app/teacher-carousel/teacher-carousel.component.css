@@ -6,6 +6,7 @@ h2
 .teachers
 {
     text-align:center;
+    border-right:1px solid grey;
 }
 
 .teacher img
@@ -19,8 +20,6 @@ h2
 
 .info
 {
-    border-right:1px solid grey;
-    padding-right:25px;
 }
 
 .first-time
